@@ -17,7 +17,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-[#f5f5f5] font-sans selection:bg-[#F27D26] selection:text-white">
+    <div id="top" className="min-h-screen bg-[#0a0a0a] text-[#f5f5f5] font-sans selection:bg-[#F27D26] selection:text-white">
       {/* Navigation */}
       <nav 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
