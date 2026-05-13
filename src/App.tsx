@@ -295,6 +295,7 @@ export default function App() {
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_subject" value="Nuevo mensaje de contacto en tu portafolio" />
+            <input type="hidden" name="_next" value="https://ferbaez.github.io/Miguel-de-hoyos/" />
             
             <div className="flex flex-col gap-3">
               <label htmlFor="name" className="text-[11px] uppercase tracking-[0.2em] text-white/50 font-bold ml-1">Nombre</label>
