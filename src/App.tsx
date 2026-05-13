@@ -4,11 +4,12 @@
  */
 
 import { motion, AnimatePresence } from "motion/react";
-import { Mail, MessageCircle, ArrowUpRight, Play, ExternalLink } from "lucide-react";
+import { Mail, MessageCircle, ArrowUpRight, Play, ExternalLink, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -24,23 +25,49 @@ export default function App() {
           scrolled ? "bg-black/80 backdrop-blur-md border-white/10 py-4" : "bg-transparent border-transparent py-6"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex flex-col"
+            className="flex flex-col z-50 relative"
           >
             <span className="text-[10px] uppercase tracking-[0.3em] text-[#F27D26] font-bold">hitster Ai presenta</span>
             <span className="text-xl font-medium tracking-tight">Miguel De Hoyos</span>
           </motion.div>
           
+          {/* Desktop Nav */}
           <div className="hidden md:flex gap-8 text-[11px] uppercase tracking-widest font-semibold text-white/60">
             <a href="#about" className="hover:text-[#F27D26] transition-colors">Perfil</a>
             <a href="#approach" className="hover:text-[#F27D26] transition-colors">Enfoque</a>
             <a href="#reel" className="hover:text-[#F27D26] transition-colors">Obra</a>
             <a href="#contact" className="hover:text-[#F27D26] transition-colors">Contacto</a>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden text-white z-50 relative p-2 -mr-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
+
+        {/* Mobile Nav Overlay */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-white/10 p-6 flex flex-col gap-6 md:hidden shadow-2xl"
+            >
+              <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-sm uppercase tracking-widest font-semibold text-white/80 hover:text-[#F27D26] transition-colors">Perfil</a>
+              <a href="#approach" onClick={() => setMobileMenuOpen(false)} className="text-sm uppercase tracking-widest font-semibold text-white/80 hover:text-[#F27D26] transition-colors">Enfoque</a>
+              <a href="#reel" onClick={() => setMobileMenuOpen(false)} className="text-sm uppercase tracking-widest font-semibold text-white/80 hover:text-[#F27D26] transition-colors">Obra</a>
+              <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-sm uppercase tracking-widest font-semibold text-white/80 hover:text-[#F27D26] transition-colors">Contacto</a>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* Hero Section */}
