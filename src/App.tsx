@@ -282,28 +282,65 @@ export default function App() {
             </p>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-            <motion.a
+          <motion.form 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            action="https://formsubmit.co/baez@hitster.page" 
+            method="POST" 
+            className="flex flex-col gap-6 w-full max-w-xl mx-auto mt-12 text-left"
+          >
+            {/* FormSubmit Config */}
+            <input type="text" name="_honey" style={{ display: 'none' }} />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_subject" value="Nuevo mensaje de contacto en tu portafolio" />
+            
+            <div className="flex flex-col gap-3">
+              <label htmlFor="name" className="text-[11px] uppercase tracking-[0.2em] text-white/50 font-bold ml-1">Nombre</label>
+              <input 
+                type="text" 
+                name="name" 
+                id="name" 
+                required 
+                className="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-[#F27D26] focus:bg-white/10 transition-all font-light placeholder:text-white/20" 
+                placeholder="Tu nombre completo" 
+              />
+            </div>
+            
+            <div className="flex flex-col gap-3">
+              <label htmlFor="email" className="text-[11px] uppercase tracking-[0.2em] text-white/50 font-bold ml-1">Correo Electrónico</label>
+              <input 
+                type="email" 
+                name="email" 
+                id="email" 
+                required 
+                className="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-[#F27D26] focus:bg-white/10 transition-all font-light placeholder:text-white/20" 
+                placeholder="tu@correo.com" 
+              />
+            </div>
+            
+            <div className="flex flex-col gap-3">
+              <label htmlFor="message" className="text-[11px] uppercase tracking-[0.2em] text-white/50 font-bold ml-1">Mensaje</label>
+              <textarea 
+                name="message" 
+                id="message" 
+                required 
+                rows={5} 
+                className="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-[#F27D26] focus:bg-white/10 transition-all resize-none font-light placeholder:text-white/20" 
+                placeholder="Háblame de tu proyecto, plazos, presupuesto..."
+              ></textarea>
+            </div>
+            
+            <motion.button 
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              href="mailto:baez@hitster.page"
-              className="w-full md:w-auto flex items-center justify-center gap-3 bg-white text-black px-10 py-5 rounded-full font-bold text-lg hover:bg-[#F27D26] hover:text-white transition-all shadow-xl"
+              type="submit" 
+              className="w-full flex items-center justify-center gap-3 bg-white text-black px-10 py-5 rounded-2xl font-bold text-lg hover:bg-[#F27D26] hover:text-white transition-all shadow-xl mt-4"
             >
-              <Mail size={24} />
-              baez@hitster.page
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              href="https://wa.me/527717298229"
-              target="_blank"
-              rel="noreferrer"
-              className="w-full md:w-auto flex items-center justify-center gap-3 bg-white/10 text-white border border-white/20 px-10 py-5 rounded-full font-bold text-lg hover:bg-[#25D366] transition-all shadow-xl backdrop-blur-sm"
-            >
-              <MessageCircle size={24} />
-              WhatsApp
-            </motion.a>
-          </div>
+              Enviar Mensaje
+            </motion.button>
+          </motion.form>
         </div>
       </section>
 
