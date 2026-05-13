@@ -91,7 +91,7 @@ export default function App() {
             <h1 className="text-6xl md:text-8xl font-medium tracking-tighter mb-6 leading-[0.9]">
               Miguel De Hoyos
             </h1>
-            <p className="text-xl md:text-2xl font-light text-white/70 max-w-2xl mx-auto leading-relaxed italic">
+            <p className="text-xl md:text-2xl font-light text-white/70 max-w-2xl mx-auto leading-relaxed italic text-justify md:text-center">
               "En la intersección de la estructura y la emoción."
             </p>
           </motion.div>
@@ -110,25 +110,25 @@ export default function App() {
 
       {/* Perfil Section */}
       <section id="about" className="py-24 md:py-40 px-6 border-b border-white/5">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+        <div className="max-w-4xl mx-auto flex flex-col items-center text-center gap-16">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6"
           >
             <span className="text-[11px] uppercase tracking-[0.4em] text-[#F27D26] font-bold">El Perfil</span>
-            <h2 className="text-4xl md:text-5xl font-medium tracking-tight leading-tight">
+            <h2 className="text-4xl md:text-5xl font-medium tracking-tight leading-tight text-balance">
               Una mirada que nace de una comprensión profunda.
             </h2>
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="space-y-6 text-lg text-white/60 leading-relaxed font-light"
+            className="space-y-6 text-lg text-white/60 leading-relaxed font-light text-justify"
           >
             <p>
               Con más de quince años de trayectoria en la industria, Miguel De Hoyos es un director de cine mexicano cuyo trabajo se sitúa exactamente en la frontera entre la emoción y la arquitectura visual.
@@ -168,12 +168,12 @@ export default function App() {
               viewport={{ once: true }}
               className="space-y-10 order-1 md:order-2"
             >
-              <div className="space-y-4">
+              <div className="space-y-4 text-center">
                 <span className="text-[11px] uppercase tracking-[0.4em] text-[#F27D26] font-bold tracking-widest">IA + Realismo</span>
-                <h2 className="text-4xl md:text-6xl font-medium tracking-tight">Innovación para marcas.</h2>
+                <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-balance">Innovación para marcas.</h2>
               </div>
               
-              <div className="space-y-6 text-lg text-white/70 font-light">
+              <div className="space-y-6 text-lg text-white/70 font-light text-justify">
                 <p>
                   Miguel diseña e implementa flujos de trabajo híbridos —Live Action combinado con IA— o producciones íntegramente generadas con Inteligencia Artificial para resolver las necesidades más exigentes de sus clientes.
                 </p>
@@ -192,10 +192,10 @@ export default function App() {
       {/* Reel Section */}
       <section id="reel" className="py-24 md:py-40 px-6">
         <div className="max-w-7xl mx-auto space-y-20">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-8 border-b border-white/10 pb-12">
+          <div className="flex flex-col items-center text-center gap-6 border-b border-white/10 pb-12">
             <div className="space-y-4">
               <span className="text-[11px] uppercase tracking-[0.4em] text-[#F27D26] font-bold">Showreel</span>
-              <h2 className="text-5xl md:text-7xl font-medium tracking-tight">Obra Seleccionada.</h2>
+              <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-balance">Obra Seleccionada.</h2>
             </div>
             <p className="text-white/40 text-sm tracking-widest uppercase mb-1">Portafolio 2026</p>
           </div>
@@ -216,10 +216,10 @@ export default function App() {
                   title="Reel I · Commercial Style"
                 />
               </div>
-              <div className="flex justify-between items-start pt-2">
-                <div>
-                  <h3 className="text-2xl font-medium tracking-tight group-hover:text-[#F27D26] transition-colors">Reel I · Commercial Style</h3>
-                  <div className="flex gap-4 mt-2">
+              <div className="flex flex-col items-center pt-4 text-center">
+                <div className="w-full">
+                  <h3 className="text-2xl font-medium tracking-tight group-hover:text-[#F27D26] transition-colors text-balance">Reel I · Commercial Style</h3>
+                  <div className="flex justify-center gap-4 mt-3">
                     <span className="text-[10px] uppercase tracking-widest text-white/50 border border-white/20 px-3 py-1 rounded-full font-bold">100% IA</span>
                     <span className="text-[10px] uppercase tracking-widest text-white/50 border border-white/20 px-3 py-1 rounded-full font-bold">2026</span>
                   </div>
@@ -243,10 +243,10 @@ export default function App() {
                   title="Reel II · General Static"
                 />
               </div>
-              <div className="flex justify-between items-start pt-2">
-                <div>
-                  <h3 className="text-2xl font-medium tracking-tight group-hover:text-[#F27D26] transition-colors">Reel II · General Static</h3>
-                  <div className="flex gap-4 mt-2">
+              <div className="flex flex-col items-center pt-4 text-center">
+                <div className="w-full">
+                  <h3 className="text-2xl font-medium tracking-tight group-hover:text-[#F27D26] transition-colors text-balance">Reel II · General Static</h3>
+                  <div className="flex justify-center gap-4 mt-3">
                     <span className="text-[10px] uppercase tracking-widest text-white/50 border border-white/20 px-3 py-1 rounded-full font-bold">100% IA</span>
                     <span className="text-[10px] uppercase tracking-widest text-white/50 border border-white/20 px-3 py-1 rounded-full font-bold">2026</span>
                   </div>
@@ -276,8 +276,8 @@ export default function App() {
         <div className="max-w-4xl mx-auto text-center space-y-16">
           <div className="space-y-6 text-center">
             <span className="text-[11px] uppercase tracking-[0.4em] text-[#F27D26] font-bold">Contacto</span>
-            <h2 className="text-5xl md:text-7xl font-medium tracking-tight">Cuéntame sobre tu proyecto.</h2>
-            <p className="text-xl text-white/50 font-light max-w-2xl mx-auto">
+            <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-balance">Cuéntame sobre tu proyecto.</h2>
+            <p className="text-xl text-white/50 font-light max-w-2xl mx-auto text-justify md:text-center">
               Disponible para dirección publicitaria, piezas cinematográficas, workflows híbridos Live Action + IA y producciones íntegramente generativas.
             </p>
           </div>
